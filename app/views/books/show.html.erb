@@ -1,0 +1,13 @@
+<h1>Book detail</h1>
+<table>
+  <tr>
+    <td><%= image_tag @book.get_image %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><% if @book.user == current_user %>
+  <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
+  </td>
+  </tr>
+</table>
