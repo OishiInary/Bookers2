@@ -11,10 +11,10 @@
   </head>
 
   <body>
-    <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <div class="container">
-    <a class="navbar-brand p-3" href="/"><strong>Bookers</strong></a>
+   <header class="shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+     <div class="container">
+      <a class="navbar-brand p-3" href="/"><strong>Bookers</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,69 +23,74 @@
       <% if user_signed_in? %>
       <li>
         <%= link_to user_path(current_user.id), class:"btn", method: :get do %>
-        <i class="fa-solid fa-house">Home</i>
+        <i class="fa-solid fa-house"></i>Home
         <% end %>
       </li>
       <li>
         <%= link_to users_path, class: "btn", method: :get do %>
-        <i class="fa-solid fa-users">Users</i>
+        <i class="fa-solid fa-users"></i>Users
         <% end %>
       </li>
       <li>
         <%= link_to books_path, class: "btn", method: :get do %>
-        <i class="fa-solid fa-book-open">Books</i>
+        <i class="fa-solid fa-book-open"></i>Books
         <% end %>
       </li>
       <li>
         <%= link_to destroy_user_session_path, class: "btn", method: :delete do %>
-        <i class="fa-solid fa-arrow-right-from-bracket">Log out</i>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out
         <% end %>
       </li>
       <% else %>
        <li>
         <%= link_to root_path, class: "btn", method: :get do %>
-        <i class="fa-solid fa-house">Home</i>
+        <i class="fa-solid fa-house"></i>Home
         <% end %>
-       </li>
-       <li>
+      </li>
+      <li>
         <%= link_to about_path, class: "btn", method: :get do %>
-        <i class="fa-solid fa-link">About</i>
+        <i class="fa-solid fa-link"></i>About
         <% end %>
-       </li>
-       <li>
-        <%= link_to new_user_registration_path, class: "btn", method: :get do %>
-       <i class="fa-solid fa-user-plus">Sign up</i>
+      </li>
+      <li>
+       <%= link_to new_user_registration_path, class: "btn", method: :get do %>
+       <i class="fa-solid fa-user-plus"></i>Sign up
        <% end %>
-       </li>
-       <li>
+      </li>
+      <li>
         <%= link_to new_user_session_path, class: "btn", method: :get do %>
-        <i class="fa-solid fa-arrow-right-to-bracket">Log in</i>
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>Log in
         <% end %>
-       </li>
+      </li>
       <% end %>
       </ul>
-      </div>
-      </div>
-      </nav>
-    </header>
+     </div>
+    </div>
+   </nav>
+  </header>
     
     
     
     
     
-      <main class="mb-auto">
-       <%= yield %>
-      </main>
-    <footer>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="mx-auto">
-            
-            <p><i class="fa-solid fa-people-group"></i> CopyRight Infratop.inc  <i class="fa-solid fa-people-group"></i></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <main class="mb-auto">
+   <%= flash[:notice] %>
+   <%= yield %>
+  </main>
+
+  <footer>
+   <div class="container mt-5">
+    <div class="row">
+     <div class="mx-auto">
+            <p>
+              <i class="fa-solid fa-people-group"></i>
+                CopyRight Infratop.inc  
+              <i class="fa-solid fa-people-group"></i>
+            </p>
+     </div>
+    </div>
+   </div>
+  </footer>
   
   </body>
 </html>
