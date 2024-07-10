@@ -3,7 +3,7 @@
   <div class="col-md-3">
   <h2>User info</h2>
   <div><%= image_tag current_user.get_profile_image(100,100) %></div>
-  <table>
+  <table class="table">
     <tr>
       <th>name</th>
       <th><%= current_user.name %></th>
@@ -16,10 +16,11 @@
   <div class="row">
     <%= link_to edit_user_registration_path, class: "btn btn-outline-secondary btn-block", method: :get do %>
       <%= button_tag type: "edit", class: "btn btn-default" do %>
-    <i class="fa-solid fa-user-gear"></i>
-    <% end %>
+       <i class="fa-solid fa-user-gear"></i>
+      <% end %>
     <% end %>
   </div>
+  
   <div class="row">
    <h2>New Book</h2>
    <%= form_with model: @book do |f| %>

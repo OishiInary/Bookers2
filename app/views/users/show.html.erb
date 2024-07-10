@@ -3,7 +3,7 @@
   <div class="col-md-3">
   <h2>User info</h2>
   <div><%= image_tag current_user.get_profile_image(100,100) %></div>
-  <table>
+  <table class="table">
     <tr>
       <th>name</th>
       <th><%= current_user.name %></th>
@@ -20,6 +20,7 @@
     <% end %>
     <% end %>
   </div>
+  
   <div class="row">
    <h2>New Book</h2>
    <%= form_with model: @book do |f| %>
