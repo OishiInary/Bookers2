@@ -1,5 +1,9 @@
 <h2>User info</h2>
-
+<div>
+ <% flash.each do |message_type, message| %>
+   <div class="flash-message <%= message_type %>"><%= message %></div>
+ <% end %>
+</div>
 <% if @user.errors.any? %>
   <div class="alert alert-danger">
    <%= @user.errors.count %>errors prohibited this obj from being saved:

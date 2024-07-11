@@ -41,7 +41,7 @@ class UsersController < ApplicationController
      redirect_to user_path(@user.id)
     else
       flash.now[:denger] = "error"
-      render :index
+      render :edit
       
     end
   end

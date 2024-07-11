@@ -1,5 +1,10 @@
 <div class="container px-5">
  <div class="container px-5">
+  <div>
+ <% flash.each do |message_type, message| %>
+   <div class="flash-message <%= message_type %>"><%= message %></div>
+ <% end %>
+</div>
  <% if @book_new.errors.any? %>
   <div class="alert alert-danger">
    <%= @book_new.errors.count %>errors prohibited this obj from being saved:
